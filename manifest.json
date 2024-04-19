@@ -1,0 +1,30 @@
+{
+    "update_url": "http://clients2.google.com/service/update2/crx",
+    "name": "Session Share",
+    "version": "0.1.0",
+    "manifest_version": 2,
+    "description": "Easily share your website account login status with friends without sharing your password! No need to worry about getting kicked offline. Simply use the same IP address to avoid any account issues.\nअपने दोस्तों के साथ अपने वेबसाइट खाते की लॉगिन स्थिति को आसानी से साझा करें बिना अपना पासवर्ड साझा करने की जरूरत! ऑफलाइन किये जाने का कोई चिंता करने की आवश्यकता नहीं है। किसी भी खाता समस्याओं से बचने के लिए बस एक ही आईपी पता का उपयोग करें।",
+    "background": {
+        "page": "background.html"
+    },
+    "browser_action": {
+        "default_icon": "icon48.png",
+        "default_popup": "popup.html"
+    },
+    "omnibox": {
+        "keyword": "session_paste"
+    },
+    "icons": {
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "minimum_chrome_version": "21",
+    "permissions": [
+        "*://*/*",
+        "contextMenus",
+        "cookies",
+        "clipboardWrite",
+        "clipboardRead",
+        "activeTab"
+    ]
+}

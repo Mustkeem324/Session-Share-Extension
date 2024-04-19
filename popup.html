@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+        }
+
+        body {
+        background-image: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+        font-family: Arial, sans-serif; /* Change the font family */
+        }
+
+        .container {
+        width: 400px;
+        margin: 20px auto; /* Center the container */
+        background-color: #fff; /* Add a background color */
+        border-radius: 10px; /* Add some border radius for rounded corners */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        }
+
+        .title {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid #ddd; /* Add a bottom border */
+        }
+
+        .title .icon {
+        width: 24px;
+        height: 24px;
+        }
+
+        .title .title-text {
+        margin-left: 10px;
+        font-size: 24px;
+        color: #333; /* Change title text color */
+        }
+
+        .author {
+            margin-bottom: 10px;
+            font-size: 14px;
+            text-align: center;
+            color: #666;
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            transition: color 0.3s ease-in-out;
+        }
+
+        .author:hover {
+            color: #333;
+            transform: scale(1.1);
+        }
+
+
+        .menu-list .menu-item {
+        padding: 15px 20px; /* Increase padding */
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Add a smooth transition effect */
+        }
+
+        .menu-list .menu-item:hover {
+        background-color: #f9f9f9; /* Change background color on hover */
+        }
+        .hidden{
+            display: none !important;
+        }
+        .copy_success {
+        position: fixed;
+        display: flex;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        align-items: center;
+        justify-content: center;
+        }
+
+        .copy_success .text {
+        font-size: 16px; /* Increase font size */
+        color: #fff;
+        text-align: center;
+        }
+
+        .introduction {
+        border-top: 1px solid #ddd;
+        padding: 20px;
+        font-size: 14px;
+        color: #444; /* Change introduction text color */
+        }
+
+        .introduction .warn {
+        color: #f50000;
+        font-style: italic; /* Change warning text style */
+        }
+        .social {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            }
+
+            .social a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 10px;
+            font-size: 18px;
+            transition: color 0.3s ease;
+            }
+
+            .social a:hover {
+            color: #007bff;
+            }
+
+        @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+
+        svg {
+            font-family: "Russo One", sans-serif;
+            width: 100%; height: 100%;
+        }
+        svg text {
+            animation: stroke 6s infinite alternate;
+            stroke-width: 2;
+            stroke: #365FA0;
+            font-size: 40px;
+        }
+        @keyframes stroke {
+            0%   {
+                fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1);
+                stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
+            }
+            70%  {fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1); }
+            80%  {fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1); stroke-width: 3; }
+            100% {
+                fill: rgba(72,138,204,1); stroke: rgba(54,95,160,0);
+                stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
+            }
+        }
+
+        .wrapper {background-color: #FFFFFF};
+
+    </style>
+  </head>
+  <body>
+    <textarea id="clipboard" class="hidden"></textarea>
+    <div class="container">
+      <div class="title">
+        <img class="icon" src="./icon128.png" />
+        <div class="title-text">Session Share</div>
+      </div>
+      <div class="wrapper">
+        <svg>
+            <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+                Session Share
+            </text>
+        </svg>
+    </div>
+      <div class="menu-list">
+        <div class="menu-item" id="id_session_copy">Copy Session Information from This Page</div>
+        <div class="menu-item" id="id_session_paste">Paste Session Information to Open in New Tab</div>
+      </div>
+      <div class="introduction">
+        Sharing session information between pages can be useful for sharing accounts on various platforms like streaming services or online learning platforms.
+        <br><br>
+        <span class="warn">Please note:</span>
+        <br>
+        1. Only share with <span class="warn">trusted individuals</span> as sharing this information grants access to your account, which can be risky.
+        <br>
+        2. Avoid sharing sensitive accounts like <span class="warn">banking</span> details to prevent information leakage.
+        <br>
+        3. It's advisable to share accounts from the same IP address to avoid suspicion.
+        <br><br>
+        <span class="warn">If you wish to revoke access for all shared sessions, manually log out of your account and log back in.</span>
+      </div>
+      <div class="social">
+        <a href="https://github.com/mustkeem324">Github</a>
+        <a href="https://instagram.com/mustaqeeem_abad">Instagram</a>
+      </div>
+      <br>        
+      <div class="author">By: Mustkeem Ahmad <a href="mailto:mustkeem324@gmail.com">&lt;mustkeem324@gmail.com&gt;</a></div>
+      <div id="copy_success" class="copy_success hidden">
+        <div class="text">Copy successful! Share this page's session information with your friends and enjoy!</div>
+      </div>
+    </div>
+    <script type="text/javascript" src="lib/jquery-v3.3.1.min.js"></script>
+    <script type="text/javascript" src="popup.js"></script>
+  </body>
+</html>
